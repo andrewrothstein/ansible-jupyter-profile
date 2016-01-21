@@ -7,4 +7,4 @@
 
 - name: set notebook base_url
   when: ipython_notebook_base_url is defined
-  lineinfile: dest={{ansible_env.HOME}}/.ipython/profile_{{ipython_profile_name}}/ipython_notebook_config.py regex="# c.NotebookApp.base_url = '/'" insertafter="c.NotebookApp.base_url = '{{ipython_notebook_endpoint}}'
+  lineinfile: dest={{ansible_env.HOME}}/.ipython/profile_{{ipython_profile_name}}/ipython_notebook_config.py regex="^# c.NotebookApp.base_url =" insertafter="c.NotebookApp.base_url = '{{ipython_notebook_endpoint}}'"
