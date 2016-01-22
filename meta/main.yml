@@ -1,7 +1,7 @@
 ---
 galaxy_info:
   author: Andrew Rothstein
-  description: creates an ipython profile
+  description: creates a jupyter notebook profile/config
   company: BlackRock
   license:
     - MIT
