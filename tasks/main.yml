@@ -1,7 +1,7 @@
 ---
 - name: create profile
   command: >
-    jupyter notebook --generate-config
+    /opt/anaconda/bin/jupyter notebook --generate-config
   args:
     creates: '{{ansible_env.HOME}}/.jupyter/jupyter_notebook_config.py'
 
