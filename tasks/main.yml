@@ -1,10 +1,14 @@
 ---
 - name: create profile
   command: >
-    ipython profile create {{ipython_profile_name}}
+    jupyter notebook --generate-config
   args:
-    creates: '{{ansible_env.HOME}}/.ipython/profile_{{ipython_profile_name}}/ipython_notebook_config.py'
+    creates: '{{ansible_env.HOME}}/.jupyter/jupyter_notebook_config.py'
 
-- name: set notebook base_url
-  when: ipython_notebook_base_url is defined
-  lineinfile: dest={{ansible_env.HOME}}/.ipython/profile_{{ipython_profile_name}}/ipython_notebook_config.py regex="^# c.NotebookApp.base_url =" insertafter="c.NotebookApp.base_url = '{{ipython_notebook_endpoint}}'"
+- name: set jupyter base_url
+  when: jupyter_notebook_base_url is defined
+  lineinfile: >-
+    state=present
+    dest={{ansible_env.HOME}}/.jupyter/jupyter_notebook_config.py
+    regexp="^# c.NotebookApp.base_url ="
+    line="c.NotebookApp.base_url = '{{jupyter_notebook_base_url}}'"

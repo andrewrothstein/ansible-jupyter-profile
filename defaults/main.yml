@@ -1,3 +1,3 @@
 ---
-ipython_profile_name : nbserver
-ipython_notebook_base_url : '/nbserver'
+jupyter_profile_name : nbserver
+jupyter_notebook_base_url : '/nbserver'
