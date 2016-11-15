@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
-docker build -t andrewrothstein/docker-ipython-profile .
+docker build -t andrewrothstein/docker-jupyter-profile .
 

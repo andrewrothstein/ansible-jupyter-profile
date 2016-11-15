@@ -1,11 +1,11 @@
 ---
-- name: create jupyter profile dir
+- name: create jupyter profiles dir
   file:
     path: '{{jupyter_config_dir}}'
     state: directory
     mode: 0777
 
-- name: create profile
+- name: create {{jupyter_profile_name}} profile
   command: >
     /opt/anaconda/bin/jupyter notebook --generate-config --config='{{jupyter_config_path}}'
   args:
