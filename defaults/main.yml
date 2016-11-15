@@ -1,7 +1,7 @@
 ---
-jupyter_profile_name : nbserver
-jupyter_config_dir : '/opt/jupyter/profiles'
+# jupyter_profile_name : jupyter
+# jupyter_config_dir : '~/.jupyter'
 
+# jupyter_config_options: []
 # Config options listed with key(option name) and value
 # eg. - { key : NotebookApp.base_url, value: '/' }
-jupyter_config_options: []

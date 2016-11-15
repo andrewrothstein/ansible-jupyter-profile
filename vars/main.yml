@@ -1,4 +1,4 @@
 ---
 # vars file for ipython-profile
-jupyter_config_name : '{{jupyter_profile_name}}_notebook_config.py'
-jupyter_config_path : '{{jupyter_config_dir}}/{{jupyter_config_name}}'
+jupyter_profile_name_default : jupyter
+jupyter_config_dir_default: '{{ansible_env.HOME}}/.jupyter'
