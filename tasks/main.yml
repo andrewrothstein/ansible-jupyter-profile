@@ -1,14 +1,20 @@
 ---
+- name: create jupyter profile dir
+  file:
+    path: '{{jupyter_config_dir}}'
+    state: directory
+    mode: 0777
+
 - name: create profile
   command: >
-    /opt/anaconda/bin/jupyter notebook --generate-config
+    /opt/anaconda/bin/jupyter notebook --generate-config --config='{{jupyter_config_path}}'
   args:
-    creates: '{{ansible_env.HOME}}/.jupyter/jupyter_notebook_config.py'
+    creates: '{{jupyter_config_path}}'
 
-- name: set jupyter base_url
-  when: jupyter_notebook_base_url is defined
+- name: set jupyter configs
+  with_items: '{{ jupyter_config_options | default([]) }}'
   lineinfile: >-
     state=present
-    dest={{ansible_env.HOME}}/.jupyter/jupyter_notebook_config.py
-    regexp="^# c.NotebookApp.base_url ="
-    line="c.NotebookApp.base_url = '{{jupyter_notebook_base_url}}'"
+    dest={{jupyter_config_path}}
+    regexp="^c.{{ item.key }} ="
+    line="c.{{ item.key }} = '{{ item.value }}'"

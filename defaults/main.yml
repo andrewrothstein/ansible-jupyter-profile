@@ -1,3 +1,7 @@
 ---
 jupyter_profile_name : nbserver
-jupyter_notebook_base_url : '/nbserver'
+jupyter_config_dir : '/opt/jupyter'
+jupyter_config_name : 'jupyter_notebook_config.py'
+jupyter_config_options:
+  - key : NotebookApp.base_url
+    value : /nbserver
