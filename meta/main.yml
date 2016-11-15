@@ -22,7 +22,7 @@ galaxy_info:
 
 dependencies:
   - role: andrewrothstein.anaconda
-    version: v1.0.10
+    version: v1.0.11
     anaconda_pkg_list:
       - jupyter
 
