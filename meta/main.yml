@@ -9,16 +9,22 @@ galaxy_info:
   platforms:
     - name: EL
       versions:
-        - 7
+        - all
     - name: Fedora
       versions:
-        - 21
+        - all
     - name: Ubuntu
       versions:
-        - trusty
+        - all
 
   galaxy_tags:
-    - development
+    - jupyter
 
-dependencies: []
+dependencies:
+  - role: andrewrothstein.anaconda
+    version: v1.0.11
+    anaconda_pkg_list:
+      - jupyter
+
+
   

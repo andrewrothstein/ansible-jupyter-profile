@@ -1,4 +1,4 @@
-FROM andrewrothstein/docker-ansible:ubuntu_trusty
+FROM andrewrothstein/docker-anaconda:latest
 VOLUME ['/wd']
 WORKDIR /wd
 
