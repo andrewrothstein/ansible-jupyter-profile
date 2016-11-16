@@ -18,4 +18,4 @@
     state=present
     dest={{ jupyter_config_dir | default(jupyter_config_dir_default) }}/{{ jupyter_profile_name | default(jupyter_profile_name_default) }}_notebook_config.py
     regexp="^c.{{ item.key }} ="
-    line="c.{{ item.key }} = '{{ item.value }}'"
+    line="c.{{ item.key }} = {{ item.value }}"
