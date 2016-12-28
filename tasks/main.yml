@@ -1,21 +1,19 @@
 ---
 - name: create jupyter profiles dir
   file:
-    path: '{{ jupyter_config_dir | default(jupyter_config_dir_default) }}'
+    path: '{{jupyter_eff_config_dir}}'
     state: directory
     mode: 0777
 
-- name: create {{ jupyter_profile_name | default(jupyter_profile_name_default) }} config profile
-  command: >
-    /opt/anaconda/bin/jupyter notebook --generate-config \
-      --config='{{ jupyter_config_dir | default(jupyter_config_dir_default) }}/{{ jupyter_profile_name | default(jupyter_profile_name_default) }}_notebook_config.py'
+- name: create {{jupyter_eff_profile_name}} config profile at {{jupyter_eff_profile_install_py}}
+  command: '{{jupyter_eff_bin}} notebook --generate-config --config={{jupyter_eff_profile_install_py}}'
   args:
-    creates: '{{ jupyter_config_dir | default(jupyter_config_dir_default) }}/{{ jupyter_profile_name | default(jupyter_profile_name_default) }}_notebook_config.py'
+    creates: '{{jupyter_eff_profile_install_py}}'
 
 - name: set jupyter configs
-  with_items: '{{ jupyter_config_options | default([]) }}'
-  lineinfile: >-
-    state=present
-    dest={{ jupyter_config_dir | default(jupyter_config_dir_default) }}/{{ jupyter_profile_name | default(jupyter_profile_name_default) }}_notebook_config.py
-    regexp="^c.{{ item.key }} ="
-    line="c.{{ item.key }} = {{ item.value }}"
+  with_items: '{{jupyter_eff_config_options}}'
+  lineinfile:
+    state: present
+    dest: '{{jupyter_profile_install_py}}'
+    regexp: '^c.{{item.key}} ='
+    line: 'c.{{item.key}} = {{item.value}}'

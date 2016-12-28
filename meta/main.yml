@@ -18,11 +18,14 @@ galaxy_info:
         - all
 
   galaxy_tags:
+    - anaconda
+    - python
     - jupyter
+    - notebook
 
 dependencies:
   - role: andrewrothstein.anaconda
-    version: v1.0.12
+    version: v2.0.0
     anaconda_pkg_list:
       - jupyter
 
