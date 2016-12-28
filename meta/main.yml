@@ -16,6 +16,9 @@ galaxy_info:
     - name: Ubuntu
       versions:
         - all
+    - name: Alpine
+      versions:
+        - all
 
   galaxy_tags:
     - anaconda
@@ -25,9 +28,10 @@ galaxy_info:
 
 dependencies:
   - role: andrewrothstein.anaconda
-    version: v2.0.0
+    version: v2.0.1
     anaconda_pkg_list:
       - jupyter
+      - '{{jupter_profile_pkg_list|default([])'
 
 
   

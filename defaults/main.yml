@@ -8,3 +8,8 @@ jupyter_profile_config_dir: '{{ansible_env.HOME}}/.jupyter'
 #    value: /
 
 jupyter_profile_bin_dir: /opt/anaconda/bin
+
+# Additional packages to install
+#jupyter_profile_pkg_list:
+#  - pkg1
+#  - pkg2
