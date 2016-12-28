@@ -1,17 +1,19 @@
 ---
 - name: create jupyter profiles dir
   file:
-    path: '{{jupyter_eff_config_dir}}'
+    path: '{{jupyter_profile_config_dir}}'
     state: directory
     mode: 0777
 
-- name: create {{jupyter_eff_profile_name}} config profile at {{jupyter_eff_profile_install_py}}
-  command: '{{jupyter_eff_bin}} notebook --generate-config --config={{jupyter_eff_profile_install_py}}'
+- name: create {{jupyter_profile_name}} config profile at {{jupyter_profile_install_py}}
+  command: >-
+    {{jupyter_profile_bin_dir}}/jupyter notebook
+    --generate-config --config={{jupyter_profile_install_py}}
   args:
-    creates: '{{jupyter_eff_profile_install_py}}'
+    creates: '{{jupyter_profile_install_py}}'
 
 - name: set jupyter configs
-  with_items: '{{jupyter_eff_config_options}}'
+  with_items: '{{jupyter_profile_config_options | default([])}}'
   lineinfile:
     state: present
     dest: '{{jupyter_profile_install_py}}'

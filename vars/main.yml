@@ -1,9 +1,3 @@
 ---
-# vars file for ipython-profile
-jupyter_profile_name_default : jupyter
-jupyter_config_dir_default: '{{ansible_env.HOME}}/.jupyter'
-jupyter_eff_config_dir: '{{jupyter_config_dir|default(jupyter_config_dir_default)}}'
-jupyter_eff_profile_name: '{{jupyter_profile_name|default(jupyter_profile_name_default)}}'
-jupyter_eff_profile_install_py: '{{jupyter_config_dir|default(jupyter_config_dir_default)}}/{{jupyter_eff_profile_name}}_notebook_config.py'
-jupyter_eff_config_options: '{{jupyter_config_options|default([])}}'
-jupyter_eff_bin: '{{jupyter_bin_dir}}/jupyter'
+jupyter_profile_install_py: >-
+  {{jupyter_profile_config_dir}}/{{jupyter_profile_name}}_notebook_config.py

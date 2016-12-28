@@ -1,13 +1,10 @@
 ---
-#defaults to jupyter
-# jupyter_profile_name : jupyter-foo
-
-# defaults to ~/.jupyter
-# jupyter_config_dir : /foo/jupyter
+jupyter_profile_name : jupyter
+jupyter_profile_config_dir: '{{ansible_env.HOME}}/.jupyter'
 
 # Config options listed with key/option-name and value
-#jupyter_config_options:
+#jupyter_profile_config_options:
 #  - key : NotebookApp.base_url
 #    value: /
 
-jupyter_bin_dir: /opt/anaconda/bin
+jupyter_profile_bin_dir: /opt/anaconda/bin
