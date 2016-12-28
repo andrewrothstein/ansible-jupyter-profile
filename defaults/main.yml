@@ -1,6 +1,9 @@
 ---
-# jupyter_profile_name : jupyter
-# jupyter_config_dir : '~/.jupyter'
+#defaults to jupyter
+# jupyter_profile_name : jupyter-foo
+
+# defaults to ~/.jupyter
+# jupyter_config_dir : /foo/jupyter
 
 # Config options listed with key/option-name and value
 #jupyter_config_options:
