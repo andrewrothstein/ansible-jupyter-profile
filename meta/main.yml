@@ -31,7 +31,7 @@ dependencies:
     version: v2.0.1
     anaconda_pkg_list:
       - jupyter
-      - '{{jupter_profile_pkg_list|default([])'
+      - '{{jupter_profile_pkg_list|default([])}}'
 
 
   
