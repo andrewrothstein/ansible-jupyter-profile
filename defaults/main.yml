@@ -1,6 +1,7 @@
 ---
 jupyter_profile_name : jupyter
 jupyter_profile_python: 3.5
+jupyter_profile_environment: environment.yml
 
 # Config options listed with key/option-name and value
 #jupyter_profile_config_options:
