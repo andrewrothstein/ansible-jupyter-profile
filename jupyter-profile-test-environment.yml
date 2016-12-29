@@ -1,2 +1,5 @@
 ---
-
+dependencies:
+- cryptography
+- pip:
+  - ansible
