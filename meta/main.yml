@@ -31,7 +31,7 @@ dependencies:
     version: v1.0.0
     conda_env_name: '{{jupyter_profile_name}}'
     conda_env_python: '{{jupyter_profile_python}}'
-    conda_env_environment: '{{jupyter_profile_environment}}'
+    conda_env_environment: '{{jupyter_profile_environment|default("settings.yml")}}'
     conda_env_addl_pkgs:
       - jupyter
 
