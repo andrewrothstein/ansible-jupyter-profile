@@ -1,15 +1,10 @@
 ---
 jupyter_profile_name : jupyter
-jupyter_profile_config_dir: '{{ansible_env.HOME}}/.jupyter'
+jupyter_profile_python: 3.5
 
 # Config options listed with key/option-name and value
 #jupyter_profile_config_options:
 #  - key : NotebookApp.base_url
 #    value: /
 
-jupyter_profile_bin_dir: /opt/anaconda/bin
-
-# Additional packages to install
-#jupyter_profile_pkg_list:
-#  - pkg1
-#  - pkg2
+jupyter_profile_conda_root: /usr/local/anaconda

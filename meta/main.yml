@@ -1,7 +1,7 @@
 ---
 galaxy_info:
   author: Andrew Rothstein
-  description: creates a jupyter notebook profile/config
+  description: creates a jupyter notebook conda env plus a notebook_config.py
   company: BlackRock
   license:
     - MIT
@@ -27,11 +27,14 @@ galaxy_info:
     - notebook
 
 dependencies:
-  - role: andrewrothstein.anaconda
-    version: v2.0.1
-    anaconda_pkg_list:
+  - role: andrewrothstein.conda-env
+    version: v1.0.0
+    conda_env_name: '{{jupyter_profile_name}}'
+    conda_env_python: '{{jupyter_profile_python}}'
+    conda_env_environment: '{{jupyter_profile_environment}}'
+    conda_env_addl_pkgs:
       - jupyter
-      - '{{jupter_profile_pkg_list|default([])}}'
+
 
 
   

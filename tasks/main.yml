@@ -1,13 +1,7 @@
 ---
-- name: create jupyter profiles dir
-  file:
-    path: '{{jupyter_profile_config_dir}}'
-    state: directory
-    mode: 0777
-
 - name: create {{jupyter_profile_name}} config profile at {{jupyter_profile_install_py}}
   command: >-
-    {{jupyter_profile_bin_dir}}/jupyter notebook
+    {{jupyter_profile_env_dir}}/bin/jupyter notebook
     --generate-config --config={{jupyter_profile_install_py}}
   args:
     creates: '{{jupyter_profile_install_py}}'
