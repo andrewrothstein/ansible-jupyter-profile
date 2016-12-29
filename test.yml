@@ -1,4 +1,9 @@
 ---
 - hosts: all
   roles:
-    - role : '{{playbook_dir}}'
+    - role: andrewrothstein.anaconda
+      anaconda_make_sys_default: True
+    - role: '{{playbook_dir}}'
+      jupyter_profile_name: jupyter-profile-test
+      jupyter_profile_python: 2.7
+      jupyter_profile_environment: jupyter-profile-test-environment.yml
