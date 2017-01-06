@@ -11,7 +11,7 @@
 - name: set jupyter configs
   become: yes
   become_user: root
-  with_items: '{{jupyter_profile_config_options | default([])}}'
+  with_items: '{{ jupyter_profile_default_config_options +  ( jupyter_profile_config_options | default([]) ) }}'
   lineinfile:
     state: present
     dest: '{{jupyter_profile_install_py}}'

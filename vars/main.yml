@@ -1,3 +1,15 @@
 ---
 jupyter_profile_env_dir: '{{jupyter_profile_conda_root}}/envs/{{jupyter_profile_name}}'
 jupyter_profile_install_py: '{{jupyter_profile_env_dir}}/notebook_config.py'
+
+jupyter_profile_nbextensions: >-
+  '{ "nb_conda": {{jupyter_profile_nb_conda_extension|default(True)}},
+     "nb_anacondacloud": {{jupyter_profile_nb_anacondacloud_extension|default(True)}},
+     "nbpresent": {{jupyter_profile_nb_present_extension|default(True)}},
+   }'
+
+jupyter_profile_default_config_options:
+  - key: NotebookApp.kernel_spec_manager_class
+    value: '{{ jupyter_profile_kernel_spec_manager_class | default("nb_conda_kernels.CondaKernelSpecManager" | to_json) }}'
+  - key: NotebookApp.nbserver_extensions
+    value: '{{ jupyter_profile_nbextensions }}'

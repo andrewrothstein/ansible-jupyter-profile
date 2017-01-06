@@ -2,9 +2,20 @@
 jupyter_profile_name : jupyter
 jupyter_profile_environment: environment.yml
 
-# Config options listed with key/option-name and value
+# Config options listed with key/option-name and value that will be added to the default options
 #jupyter_profile_config_options:
 #  - key : NotebookApp.base_url
 #    value: /
+
+# Default kernel spec manager class that will be used
+#jupyter_profile_kernel_spec_manager_class: nb_conda_kernels.CondaKernelSpecManager
+
+# Default extensions that will be added to jupyter notebook
+#jupyter_profile_nb_conda_extension: True
+#jupyter_profile_nb_anacondacloud_extension: True
+#jupyter_profile_nb_present_extension: True
+
+# To manage list of nbextensions that are loaded, use following var
+#jupyter_profile_nbextensions: '{ "toc": True, "nbconda": True, "nb_anacondacloud": False }'
 
 jupyter_profile_conda_root: /usr/local/anaconda
