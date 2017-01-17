@@ -18,4 +18,7 @@ jupyter_profile_environment: environment.yml
 # To manage list of nbextensions that are loaded, use following var
 #jupyter_profile_nbextensions: '{ "toc": True, "nbconda": True, "nb_anacondacloud": False }'
 
+# Option to clean conda downloads and cached packages
+jupyter_profile_conda_cleanup: False
+
 jupyter_profile_conda_root: /usr/local/anaconda
