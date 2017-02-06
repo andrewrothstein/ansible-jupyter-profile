@@ -33,4 +33,7 @@ dependencies:
     conda_env_environment: '{{jupyter_profile_environment}}'
     conda_env_addl_pkgs:
       - jupyter
+      - nb_conda
+      - nbpresent
+      - nb_anacondacloud
     conda_env_cleanup: '{{jupyter_profile_conda_cleanup}}'
