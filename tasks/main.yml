@@ -4,7 +4,7 @@
   become_user: root
   command: >-
     {{jupyter_profile_env_dir}}/bin/jupyter notebook
-    --generate-config --config={{jupyter_profile_install_py}}
+    --generate-config --config={{jupyter_profile_install_py}} --allow-root
   args:
     creates: '{{jupyter_profile_install_py}}'
 
