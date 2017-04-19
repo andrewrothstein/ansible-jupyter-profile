@@ -19,7 +19,6 @@ galaxy_info:
     - name: Alpine
       versions:
         - all
-
   galaxy_tags:
     - anaconda
     - python
@@ -28,7 +27,7 @@ galaxy_info:
 
 dependencies:
   - role: andrewrothstein.conda-env
-    version: v1.0.2
+    version: v1.0.3
     conda_env_name: '{{jupyter_profile_name}}'
     conda_env_environment: '{{jupyter_profile_environment}}'
     conda_env_addl_pkgs:
