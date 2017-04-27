@@ -1,4 +1,4 @@
-[![CircleCI](https://circleci.com/gh/andrewrothstein/ansible-jupyter-profile.svg?style=svg)](https://circleci.com/gh/andrewrothstein/ansible-jupyter-profile)
+[![Build Status](https://travis-ci.org/andrewrothstein/ansible-jupyter-profile.svg?branch=master)](https://travis-ci.org/andrewrothstein/ansible-jupyter-profile)
 andrewrothstein.jupyter-profile
 =========
 

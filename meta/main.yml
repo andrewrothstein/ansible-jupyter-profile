@@ -27,7 +27,7 @@ galaxy_info:
 
 dependencies:
   - role: andrewrothstein.conda-env
-    version: v1.0.3
+    version: v1.0.4
     conda_env_name: '{{jupyter_profile_name}}'
     conda_env_environment: '{{jupyter_profile_environment}}'
     conda_env_addl_pkgs:
