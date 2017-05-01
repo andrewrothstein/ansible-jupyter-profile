@@ -1,17 +1,20 @@
 ---
 - name: create {{jupyter_profile_name}} config profile at {{jupyter_profile_install_py}}
-  become: yes
+  become: '{{jupyter_profile_privilege_escalate|default(True)}}'
   become_user: root
   command: >-
     {{jupyter_profile_env_dir}}/bin/jupyter notebook
-    --generate-config --config={{jupyter_profile_install_py}} --allow-root
+    --generate-config --config={{jupyter_profile_install_py}}
+    --allow-root
   args:
     creates: '{{jupyter_profile_install_py}}'
 
 - name: set jupyter configs
-  become: yes
+  become: '{{jupyter_profile_privilege_escalate|default(True)}}'
   become_user: root
-  with_items: '{{ jupyter_profile_default_config_options +  ( jupyter_profile_config_options | default([]) ) }}'
+  with_items:
+    - '{{jupyter_profile_default_config_options}}'
+    - '{{jupyter_profile_config_options | default([])}}'
   lineinfile:
     state: present
     dest: '{{jupyter_profile_install_py}}'
