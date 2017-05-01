@@ -24,3 +24,9 @@ jupyter_profile_conda_cleanup: False
 # Escalates by default 
 #jupyter_profile_privilege_escalate: True
 jupyter_profile_conda_root: /usr/local/anaconda
+
+jupyter_profile_dflt_addl_pkgs:
+  - p: jupyter
+  - p: nb_conda
+  - p: nbpresent
+  - p: nb_anacondacloud

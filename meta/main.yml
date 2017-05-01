@@ -30,9 +30,5 @@ dependencies:
     version: v2.0.0
     conda_env_name: '{{jupyter_profile_name}}'
     conda_env_environment: '{{jupyter_profile_environment}}'
-    conda_env_addl_pkgs:
-      - p: jupyter
-      - p: nb_conda
-      - p: nbpresent
-      - p: nb_anacondacloud
+    conda_env_addl_pkgs: '{{jupyter_profile_addl_pkgs|default(jupyter_profile_dflt_addl_pkgs)}}'
     conda_env_cleanup: '{{jupyter_profile_conda_cleanup}}'
