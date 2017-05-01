@@ -1,8 +1,9 @@
-[![Build Status](https://travis-ci.org/andrewrothstein/ansible-jupyter-profile.svg?branch=master)](https://travis-ci.org/andrewrothstein/ansible-jupyter-profile)
 andrewrothstein.jupyter-profile
 =========
+[![Build Status](https://travis-ci.org/andrewrothstein/ansible-jupyter-profile.svg?branch=master)](https://travis-ci.org/andrewrothstein/ansible-jupyter-profile)
 
-Installs [Jupyter](https://jupyter.org/) atop [Anaconda](https://www.continuum.io/anaconda-overview)
+* Installs and configures a [Jupyter](https://jupyter.org/) notebook
+* Assumes [Anaconda](https://www.continuum.io/anaconda-overview) is installed.
 
 Requirements
 ------------
