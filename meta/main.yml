@@ -9,16 +9,19 @@ galaxy_info:
   platforms:
     - name: EL
       versions:
-        - all
+        - 7
     - name: Fedora
       versions:
-        - all
+        - 23
+        - 24
+        - 25
     - name: Ubuntu
       versions:
-        - all
-    - name: Alpine
+        - trusty
+        - xenial
+    - name: Debian
       versions:
-        - all
+        - jessie
   galaxy_tags:
     - anaconda
     - python
@@ -26,7 +29,7 @@ galaxy_info:
     - notebook
 
 dependencies:
-  - role: andrewrothstein.conda-env
+  - src: andrewrothstein.conda-env
     version: v2.0.0
     conda_env_name: '{{jupyter_profile_name}}'
     conda_env_environment: '{{jupyter_profile_environment}}'
