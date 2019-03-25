@@ -30,7 +30,7 @@ galaxy_info:
 
 dependencies:
   - src: andrewrothstein.conda-env
-    version: v2.0.2
+    version: v2.0.5
     conda_env_name: '{{jupyter_profile_name}}'
     conda_env_environment: '{{jupyter_profile_environment}}'
     conda_env_addl_pkgs: '{{jupyter_profile_addl_pkgs|default(jupyter_profile_dflt_addl_pkgs)}}'
