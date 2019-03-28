@@ -1,5 +1,5 @@
 ---
-jupyter_profile_name : jupyter
+jupyter_profile_name: jupyter
 jupyter_profile_environment: environment.yml
 
 # Config options listed with key/option-name and value that will be added to the default options
