@@ -1,37 +1,36 @@
----
+dependencies:
+- conda_env_addl_pkgs: '{{ jupyter_profile_addl_pkgs|default(jupyter_profile_dflt_addl_pkgs)
+    }}'
+  conda_env_cleanup: '{{ jupyter_profile_conda_cleanup }}'
+  conda_env_environment: '{{ jupyter_profile_environment }}'
+  conda_env_name: '{{ jupyter_profile_name }}'
+  role: andrewrothstein.conda-env
+  version: v2.0.7
 galaxy_info:
   author: Andrew Rothstein
-  description: creates a jupyter notebook conda env plus a notebook_config.py
   company: BlackRock
+  description: creates a jupyter notebook conda env plus a notebook_config.py
+  galaxy_tags:
+  - anaconda
+  - python
+  - jupyter
+  - notebook
   license:
-    - MIT
+  - MIT
   min_ansible_version: 1.2
   platforms:
-    - name: EL
-      versions:
-        - 7
-    - name: Fedora
-      versions:
-        - 23
-        - 24
-        - 25
-    - name: Ubuntu
-      versions:
-        - trusty
-        - xenial
-    - name: Debian
-      versions:
-        - jessie
-  galaxy_tags:
-    - anaconda
-    - python
-    - jupyter
-    - notebook
-
-dependencies:
-  - src: andrewrothstein.conda-env
-    version: v2.0.5
-    conda_env_name: '{{ jupyter_profile_name }}'
-    conda_env_environment: '{{ jupyter_profile_environment }}'
-    conda_env_addl_pkgs: '{{ jupyter_profile_addl_pkgs|default(jupyter_profile_dflt_addl_pkgs) }}'
-    conda_env_cleanup: '{{ jupyter_profile_conda_cleanup }}'
+  - name: EL
+    versions:
+    - 7
+  - name: Fedora
+    versions:
+    - 23
+    - 24
+    - 25
+  - name: Ubuntu
+    versions:
+    - trusty
+    - xenial
+  - name: Debian
+    versions:
+    - jessie
