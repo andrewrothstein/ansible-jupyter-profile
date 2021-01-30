@@ -4,3 +4,14 @@
     - role: '{{playbook_dir}}'
       jupyter_profile_name: ansible-jupyter-profile
       jupyter_profile_environment: jupyter-profile-test-environment.yml
+      jupyter_profile_config_imports: [os, time]
+    
+- hosts: all
+  tasks:
+    - name: make sure config imports are propely formatted
+      command: head -n 5 {{ jupyter_profile_install_py }} 
+      register: head_out
+
+    - name: debug
+      debug:
+        msg: "{{ head_out.stdout }}"

@@ -9,6 +9,16 @@
   args:
     creates: '{{ jupyter_profile_install_py }}'
 
+- name: set config imports
+  become: '{{ jupyter_profile_privilege_escalate|default(True) }}'
+  become_user: root
+  with_items: '{{ jupyter_profile_config_imports | default([]) }}'
+  lininfile:
+    state: present
+    dest: '{{ jupyter_profile_install_py }}'
+    insertbefore: BOF
+    line: 'import {{ item }}'
+
 - name: set jupyter configs
   become: '{{ jupyter_profile_privilege_escalate|default(True) }}'
   become_user: root
