@@ -27,8 +27,8 @@ Example Playbook
 - hosts: servers
   roles:
     - role: andrewrothstein.jupyter-profile
-	    jupyter_profile_name: my-jupyter-profile
-	    jupyter_profile_environment: my-jupyter-profile-environment.yml
+      jupyter_profile_name: my-jupyter-profile
+      jupyter_profile_environment: my-jupyter-profile-environment.yml
 ```
 
 License
