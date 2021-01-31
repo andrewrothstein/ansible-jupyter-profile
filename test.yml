@@ -4,3 +4,26 @@
     - role: '{{playbook_dir}}'
       jupyter_profile_name: ansible-jupyter-profile
       jupyter_profile_environment: jupyter-profile-test-environment.yml
+      jupyter_profile_config_imports: [os, time]
+      jupyter_profile_config_options:
+        - key: NotebookApp.base_url
+          value: os.environ.get('JUPYTER_BASE_URL', '/')
+
+    
+- hosts: all
+  tasks:
+    - name: see if config imports are propely formatted
+      command: head -n 5 {{ jupyter_profile_install_py }} 
+      register: head_out
+
+    - name: debug
+      debug:
+        msg: "{{ head_out.stdout }}"
+    
+    - name: see if custom configs are propely formatted
+      command: tail -n 5 {{ jupyter_profile_install_py }} 
+      register: tail_out
+
+    - name: debug
+      debug:
+        msg: "{{ tail_out.stdout }}"
