@@ -1,11 +1,10 @@
 dependencies:
-- conda_env_addl_pkgs: '{{ jupyter_profile_addl_pkgs|default(jupyter_profile_dflt_addl_pkgs)
-    }}'
+- conda_env_addl_pkgs: '{{ jupyter_profile_addl_pkgs | default(jupyter_profile_dflt_addl_pkgs) }}'
   conda_env_cleanup: '{{ jupyter_profile_conda_cleanup }}'
   conda_env_environment: '{{ jupyter_profile_environment }}'
   conda_env_name: '{{ jupyter_profile_name }}'
   role: andrewrothstein.conda-env
-  version: v2.0.7
+  version: v2.1.4
 galaxy_info:
   author: Andrew Rothstein
   company: BlackRock
@@ -19,18 +18,20 @@ galaxy_info:
   - MIT
   min_ansible_version: 1.2
   platforms:
+  - name: Debian
+    versions:
+    - buster
+    - stretch
   - name: EL
     versions:
     - 7
+    - 8
   - name: Fedora
     versions:
-    - 23
-    - 24
-    - 25
+    - 31
+    - 32
   - name: Ubuntu
     versions:
-    - trusty
+    - bionic
+    - focal
     - xenial
-  - name: Debian
-    versions:
-    - jessie
