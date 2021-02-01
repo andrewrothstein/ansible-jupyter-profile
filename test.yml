@@ -1,16 +1,18 @@
 ---
 - hosts: all
   roles:
-    - role: '{{playbook_dir}}'
+    - role: andrewrothstein.miniconda
+    - role: '{{ playbook_dir }}'
       jupyter_profile_name: ansible-jupyter-profile
       jupyter_profile_environment: jupyter-profile-test-environment.yml
       jupyter_profile_config_imports: [os, time]
       jupyter_profile_config_options:
         - key: NotebookApp.base_url
           value: os.environ.get('JUPYTER_BASE_URL', '/')
-
     
 - hosts: all
+  vars:
+    jupyter_profile_install_py: /usr/local/anaconda/envs/ansible-jupyter-profile/notebook_config.py
   tasks:
     - name: see if config imports are propely formatted
       command: head -n 5 {{ jupyter_profile_install_py }} 
